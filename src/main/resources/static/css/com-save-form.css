@@ -17,12 +17,15 @@ body {
     /* font-family: "Noto Sans KR", sans-serif; */
 }
 
+.felx-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form-box {
     width: 400px;
-    position: absolute;
-    top: 42%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 75px;
 }
 
 .save {

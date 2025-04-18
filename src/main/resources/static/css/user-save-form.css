@@ -17,14 +17,15 @@ body {
     align-items: center;
 }
 
-.form-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+.felx-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.form-box {
     width: 400px;
+    margin: 75px;
 }
 
 .save {

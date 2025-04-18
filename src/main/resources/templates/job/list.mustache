@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,40 +8,144 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 	/>
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/job-list.css"/>
 </head>
+<!-- 채용공고 리스트 -->
 
 {{> layout/header}}
 
 <main>
 	<section>
-		<div class="container mt-4 mb-5 d-flex flex-column">
-			<div class="recommend d-flex flex-column gap-4 w-100">
-				<div
-						class="recommend-top d-flex justify-content-between align-items-end"
-				>
-					<h2 class="fs-4 fw-medium">추천공고</h2>
-					<ul
-							class="pagination d-flex justify-content-center"
+		<div class="container mt-4 mb-5 py-4 d-flex flex-column gap-1">
+			<div class="filter-wrap">
+				<form action="" method="GET">
+					<div
+							class="top d-flex align-items-center mb-3 justify-content-between"
 					>
-						<li class="page-item">
-							<a class="page-link" href="#"><</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">></a>
-						</li>
-					</ul>
-				</div>
-				<!-- .recommend-top end -->
-				<ul class="card-wrap d-flex justify-content-start">
+						<div class="d-flex gap-2">
+							<select name="jobType" id="jobType">
+								<option value="developer">
+									서버 개발자
+								</option>
+								<option value="developer">
+									소프트웨어 엔지니어
+								</option>
+								<option value="developer">
+									자바 개발자
+								</option>
+							</select>
+
+							<select name="careerLevel" id="careerLevel">
+								<option value="entry">신입</option>
+								<option value="mid">3년 이상</option>
+								<option value="senior">5년 이상</option>
+								<option value="senior">
+									10년 이상
+								</option>
+							</select>
+						</div>
+						<div class="d-flex gap-3">
+							<div class="form-check">
+								<input
+										class="form-check-input"
+										type="radio"
+										name="sort"
+										value="latest"
+										checked
+								/>
+								<label class="form-check-label"
+								>최신순</label
+								>
+							</div>
+							<div class="form-check">
+								<input
+										class="form-check-input"
+										type="radio"
+										name="sort"
+										value="recommended"
+								/>
+								<label class="form-check-label"
+								>추천순</label
+								>
+							</div>
+							<div class="form-check">
+								<input
+										class="form-check-input"
+										type="radio"
+										name="sort"
+										value="popular"
+								/>
+								<label class="form-check-label"
+								>인기순</label
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkbox-area flex-wrap">
+						<div
+								class="skill form-check d-flex gap-3 align-items-center"
+						>
+							<input
+									class="form-check-input"
+									type="checkbox"
+									name="skills"
+									value="all"
+							/>
+							<label class="form-check-label"
+							>전체보기</label
+							>
+						</div>
+						<div
+								class="skill form-check d-flex gap-3 align-items-center"
+						>
+							<input
+									class="form-check-input"
+									type="checkbox"
+									name="skills"
+									value="java"
+							/>
+							<label class="form-check-label">JAVA</label>
+						</div>
+						<div
+								class="skill form-check d-flex gap-3 align-items-center"
+						>
+							<input
+									class="form-check-input"
+									type="checkbox"
+									name="skills"
+									value="java"
+							/>
+							<label class="form-check-label">JAVA</label>
+						</div>
+						<div
+								class="skill form-check d-flex gap-3 align-items-center"
+						>
+							<input
+									class="form-check-input"
+									type="checkbox"
+									name="skills"
+									value="java"
+							/>
+							<label class="form-check-label">JAVA</label>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- .filter-wrap end -->
+			<div class="job-list">
+				<ul class="card-wrap row">
 					<li class="card-1">
-						<a href="/job/1" class="d-flex flex-column gap-2">
+						<a
+								href="/job/1"
+								class="col-3 d-flex flex-column gap-2 w-100"
+						>
 							<figure
 									class="recommend-img overflow-hidden d-flex align-items-center border rounded"
 							>
 								<img
 										class="w-100"
-										src="/img/image00.png"
+										src="img/image00.png"
 										alt="임시이미지"
 								/>
 							</figure>
@@ -69,7 +173,7 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">경력</p>
@@ -78,7 +182,7 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">
@@ -107,13 +211,16 @@
 						</a>
 					</li>
 					<li class="card-1">
-						<a href="/job/1" class="d-flex flex-column gap-2">
+						<a
+								href="/job/1"
+								class="col-3 d-flex flex-column gap-2 w-100"
+						>
 							<figure
 									class="recommend-img overflow-hidden d-flex align-items-center border rounded"
 							>
 								<img
 										class="w-100"
-										src="/img/image00.png"
+										src="img/image00.png"
 										alt="임시이미지"
 								/>
 							</figure>
@@ -141,7 +248,7 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">경력</p>
@@ -150,7 +257,7 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">
@@ -179,13 +286,16 @@
 						</a>
 					</li>
 					<li class="card-1">
-						<a href="/job/1" class="d-flex flex-column gap-2">
+						<a
+								href="/job/1"
+								class="col-3 d-flex flex-column gap-2 w-100"
+						>
 							<figure
 									class="recommend-img overflow-hidden d-flex align-items-center border rounded"
 							>
 								<img
 										class="w-100"
-										src="/img/image00.png"
+										src="img/image00.png"
 										alt="임시이미지"
 								/>
 							</figure>
@@ -213,7 +323,7 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">경력</p>
@@ -222,7 +332,7 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">
@@ -251,13 +361,16 @@
 						</a>
 					</li>
 					<li class="card-1">
-						<a href="/job/1" class="d-flex flex-column gap-2">
+						<a
+								href="/job/1"
+								class="col-3 d-flex flex-column gap-2 w-100"
+						>
 							<figure
 									class="recommend-img overflow-hidden d-flex align-items-center border rounded"
 							>
 								<img
 										class="w-100"
-										src="/img/image00.png"
+										src="img/image00.png"
 										alt="임시이미지"
 								/>
 							</figure>
@@ -285,7 +398,7 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">경력</p>
@@ -294,7 +407,82 @@
 												class="d-flex align-items-center gap-1"
 										>
 											<img
-													src="/img/icon00.png"
+													src="img/icon00.png"
+													alt="임시아이콘"
+											/>
+											<p class="fs-6">
+												서울특별시 마포구
+											</p>
+										</li>
+									</ul>
+									<ul
+											class="duty d-flex justify-content-start gap-1"
+									>
+										<li class="p-2 rounded">
+											<p class="fs-6 fw-medium">
+												서버/백엔드
+											</p>
+										</li>
+										<li class="p-2 rounded">
+											<p class="fs-6 fw-medium">
+												서버/백엔드
+											</p>
+										</li>
+									</ul>
+								</div>
+								<!-- .bottom end -->
+							</div>
+							<!-- .recommend-content end -->
+						</a>
+					</li>
+					<li class="card-1">
+						<a
+								href="/job/1"
+								class="col-3 d-flex flex-column gap-2 w-100"
+						>
+							<figure
+									class="recommend-img overflow-hidden d-flex align-items-center border rounded"
+							>
+								<img
+										class="w-100"
+										src="img/image00.png"
+										alt="임시이미지"
+								/>
+							</figure>
+							<div
+									class="recommend-content d-flex flex-column border rounded gap-3 py-3 px-3"
+							>
+								<div
+										class="top d-flex justify-content-between"
+								>
+									<h3 class="fs-6 fw-medium">
+										채용공고명
+									</h3>
+									<div class="toggle-btn"></div>
+									<!-- .toggle-btn end -->
+								</div>
+								<!-- .top end -->
+								<div
+										class="bottom d-flex flex-column gap-3"
+								>
+									<p class="fs-6">회사명</p>
+									<ul
+											class="d-flex justify-content-start gap-4"
+									>
+										<li
+												class="d-flex align-items-center gap-1"
+										>
+											<img
+													src="img/icon00.png"
+													alt="임시아이콘"
+											/>
+											<p class="fs-6">경력</p>
+										</li>
+										<li
+												class="d-flex align-items-center gap-1"
+										>
+											<img
+													src="img/icon00.png"
 													alt="임시아이콘"
 											/>
 											<p class="fs-6">
@@ -325,99 +513,29 @@
 					<!-- .card-1 end -->
 				</ul>
 				<!-- .card-wrap end -->
-			</div>
-			<!-- .recommend end -->
-
-			<div class="news d-flex flex-column gap-4 w-100">
-				<div
-						class="news-top d-flex justify-content-between align-items-end"
-				>
-					<h2 class="fs-4 fw-medium">지금 주목할 소식</h2>
-					<ul
-							class="pagination d-flex justify-content-center"
-					>
+				<div class="pagging d-flex justify-content-center">
+					<ul class="pagination">
 						<li class="page-item">
-							<a class="page-link" href="#"><</a>
+							<a class="page-link" href="#">Previous</a>
 						</li>
 						<li class="page-item">
-							<a class="page-link" href="#">></a>
+							<a class="page-link" href="#">1</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">2</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">3</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">Next</a>
 						</li>
 					</ul>
 				</div>
-				<!-- .news-top end -->
-				<ul
-						class="card-wrap2 d-flex justify-content-start w-100"
-				>
-					<li
-							class="card-2 overflow-hidden rounded position-relative"
-					>
-						<a href="https://meta-coding.com/">
-							<figure class="news-img">
-								<img
-										class="w-100"
-										src="/img/image00.png"
-										alt="임시이미지"
-								/>
-							</figure>
-							<!-- .news-img end -->
-							<div
-									class="cont-wrap d-flex flex-column position-absolute bottom-0 left-0 gap-3 p-4 w-100"
-							>
-								<p class="fs-4 fw-medium">타이틀</p>
-								<span class="fs-6">내용영역</span>
-							</div>
-							<!-- .cont-wrap end -->
-						</a>
-					</li>
-					<li
-							class="card-2 overflow-hidden rounded position-relative"
-					>
-						<a href="https://meta-coding.com/">
-							<figure class="news-img">
-								<img
-										class="w-100"
-										src="/img/image00.png"
-										alt="임시이미지"
-								/>
-							</figure>
-							<!-- .news-img end -->
-							<div
-									class="cont-wrap d-flex flex-column position-absolute bottom-0 left-0 gap-3 p-4 w-100"
-							>
-								<p class="fs-4 fw-medium">타이틀</p>
-								<span class="fs-6">내용영역</span>
-							</div>
-							<!-- .cont-wrap end -->
-						</a>
-					</li>
-					<li
-							class="card-2 overflow-hidden rounded position-relative"
-					>
-						<a href="https://meta-coding.com/">
-							<figure class="news-img">
-								<img
-										class="w-100"
-										src="/img/image00.png"
-										alt="임시이미지"
-								/>
-							</figure>
-							<!-- .news-img end -->
-							<div
-									class="cont-wrap d-flex flex-column position-absolute bottom-0 left-0 gap-3 p-4 w-100"
-							>
-								<p class="fs-4 fw-medium">타이틀</p>
-								<span class="fs-6">내용영역</span>
-							</div>
-							<!-- .cont-wrap end -->
-						</a>
-					</li>
-					<!-- .card-2 end -->
-				</ul>
-				<!-- .card-wrap2 end -->
+				<!-- .pagging end -->
 			</div>
-			<!-- .news end -->
+			<!-- .job-list end -->
 		</div>
-		<!-- .container end -->
 	</section>
 </main>
 
